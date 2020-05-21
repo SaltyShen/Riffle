@@ -1,20 +1,27 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import {Link, Button} from '@material-ui/core';
+
 import logo from '../logo.svg'
 
 const Navbar = () => {
 
     return(
-        <div>
-        <AppBar position="static" style={{ background: '#1DB954' }}>
-            <Toolbar className="nav-toolbar">
-                <img src={logo} className="App-logo" alt="logo"></img>
-                <Typography variant="title"> </Typography>
-            </Toolbar>
-        </AppBar>
-        </div>
+
+        
+            <nav className="nav-wrapper"  style={{ background: '#1DB954' }}>
+            <img src={logo} className="App-logo left" alt="logo"></img>
+                <div className="container">
+                    
+                    <ul className="right">
+                        <li><Link className="nav-tabs" to="/home">Home</Link></li>
+                        <li><Link className="nav-tabs" to="/playlists">Playlists</Link></li>
+                        <li><Link className="nav-tabs" to="/about">About</Link></li>
+                        <li><Link className="nav-tabs" to="/profile">Profile</Link></li>
+                    </ul>
+
+                </div>
+            </nav>
+
     )
 }
 export default Navbar;

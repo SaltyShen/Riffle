@@ -3,15 +3,23 @@ import Button from "@material-ui/core/Button"
 
 class profileOnline {
     state = {
-        username: null,
-        password: null,
-        playlists: null
+        
+    }
+    authorize(){
+    app.get('/login', function(req, res) {
+        var scopes = 'user-read-private user-read-email';
+        res.redirect('https://accounts.spotify.com/authorize' +
+          '?response_type=code' +
+          '&client_id=' + my_client_id +
+          (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
+          '&redirect_uri=' + encodeURIComponent(redirect_uri));
+        });
     }
     render(){
         return(
             <div className="loginBox">
 
-
+                {authorize}
 
             </div>
         )

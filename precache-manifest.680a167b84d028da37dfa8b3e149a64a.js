@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2909a2387e88d938f63534838eeccce2",
+    "revision": "1a001774d6853e20fa219aefe21fabf3",
     "url": "/Riffle/index.html"
   },
   {
-    "revision": "ea43ff9e441d8ab0a6be",
+    "revision": "97582de9bee2c1485ef6",
     "url": "/Riffle/static/css/main.22f36b3f.chunk.css"
   },
   {
-    "revision": "328f9ba5ac6731bbf6b0",
-    "url": "/Riffle/static/js/2.c99add5b.chunk.js"
+    "revision": "9ce32522697c7b4df693",
+    "url": "/Riffle/static/js/2.da2f56e0.chunk.js"
   },
   {
     "revision": "0749163b59fbee32225059cb60c18af6",
-    "url": "/Riffle/static/js/2.c99add5b.chunk.js.LICENSE.txt"
+    "url": "/Riffle/static/js/2.da2f56e0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ea43ff9e441d8ab0a6be",
-    "url": "/Riffle/static/js/main.983fd3b6.chunk.js"
+    "revision": "97582de9bee2c1485ef6",
+    "url": "/Riffle/static/js/main.a5f9f5d4.chunk.js"
   },
   {
     "revision": "0084ea5ed7d14274a8d6",

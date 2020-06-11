@@ -43,7 +43,11 @@
   flex-direction: column;
   align-items: left;
   justify-content: start;
-  
 }
+
+.App-body loadText {
+  color: white;
+}
+
 
 

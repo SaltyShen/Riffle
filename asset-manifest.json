@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Riffle/static/css/main.306dd00d.chunk.css",
-    "main.js": "/Riffle/static/js/main.4741da5e.chunk.js",
-    "main.js.map": "/Riffle/static/js/main.4741da5e.chunk.js.map",
+    "main.js": "/Riffle/static/js/main.d77ddb6b.chunk.js",
+    "main.js.map": "/Riffle/static/js/main.d77ddb6b.chunk.js.map",
     "runtime-main.js": "/Riffle/static/js/runtime-main.cdbe08dd.js",
     "runtime-main.js.map": "/Riffle/static/js/runtime-main.cdbe08dd.js.map",
     "static/js/2.8cd2fa14.chunk.js": "/Riffle/static/js/2.8cd2fa14.chunk.js",
     "static/js/2.8cd2fa14.chunk.js.map": "/Riffle/static/js/2.8cd2fa14.chunk.js.map",
     "index.html": "/Riffle/index.html",
-    "precache-manifest.43e1d216a96cbf56bc13ed764db96a0f.js": "/Riffle/precache-manifest.43e1d216a96cbf56bc13ed764db96a0f.js",
+    "precache-manifest.c4c51733f9fcd22d9e27b620c156c0a2.js": "/Riffle/precache-manifest.c4c51733f9fcd22d9e27b620c156c0a2.js",
     "service-worker.js": "/Riffle/service-worker.js",
     "static/css/main.306dd00d.chunk.css.map": "/Riffle/static/css/main.306dd00d.chunk.css.map",
     "static/js/2.8cd2fa14.chunk.js.LICENSE.txt": "/Riffle/static/js/2.8cd2fa14.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.cdbe08dd.js",
     "static/js/2.8cd2fa14.chunk.js",
     "static/css/main.306dd00d.chunk.css",
-    "static/js/main.4741da5e.chunk.js"
+    "static/js/main.d77ddb6b.chunk.js"
   ]
 }

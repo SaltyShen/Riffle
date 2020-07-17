@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Riffle/static/css/main.306dd00d.chunk.css",
-    "main.js": "/Riffle/static/js/main.3d629230.chunk.js",
-    "main.js.map": "/Riffle/static/js/main.3d629230.chunk.js.map",
+    "main.css": "/Riffle/static/css/main.437f7fe2.chunk.css",
+    "main.js": "/Riffle/static/js/main.dc6ef2ef.chunk.js",
+    "main.js.map": "/Riffle/static/js/main.dc6ef2ef.chunk.js.map",
     "runtime-main.js": "/Riffle/static/js/runtime-main.cdbe08dd.js",
     "runtime-main.js.map": "/Riffle/static/js/runtime-main.cdbe08dd.js.map",
-    "static/js/2.f822d9d0.chunk.js": "/Riffle/static/js/2.f822d9d0.chunk.js",
-    "static/js/2.f822d9d0.chunk.js.map": "/Riffle/static/js/2.f822d9d0.chunk.js.map",
+    "static/js/2.405baf2e.chunk.js": "/Riffle/static/js/2.405baf2e.chunk.js",
+    "static/js/2.405baf2e.chunk.js.map": "/Riffle/static/js/2.405baf2e.chunk.js.map",
     "index.html": "/Riffle/index.html",
-    "precache-manifest.1906eea44bdd86255462eb34ba3370b4.js": "/Riffle/precache-manifest.1906eea44bdd86255462eb34ba3370b4.js",
+    "precache-manifest.3c1a0e977d02c117f9fab75779c74b5c.js": "/Riffle/precache-manifest.3c1a0e977d02c117f9fab75779c74b5c.js",
     "service-worker.js": "/Riffle/service-worker.js",
-    "static/css/main.306dd00d.chunk.css.map": "/Riffle/static/css/main.306dd00d.chunk.css.map",
-    "static/js/2.f822d9d0.chunk.js.LICENSE.txt": "/Riffle/static/js/2.f822d9d0.chunk.js.LICENSE.txt",
+    "static/css/main.437f7fe2.chunk.css.map": "/Riffle/static/css/main.437f7fe2.chunk.css.map",
+    "static/js/2.405baf2e.chunk.js.LICENSE.txt": "/Riffle/static/js/2.405baf2e.chunk.js.LICENSE.txt",
     "static/media/logo.svg": "/Riffle/static/media/logo.bf2c47e6.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.cdbe08dd.js",
-    "static/js/2.f822d9d0.chunk.js",
-    "static/css/main.306dd00d.chunk.css",
-    "static/js/main.3d629230.chunk.js"
+    "static/js/2.405baf2e.chunk.js",
+    "static/css/main.437f7fe2.chunk.css",
+    "static/js/main.dc6ef2ef.chunk.js"
   ]
 }

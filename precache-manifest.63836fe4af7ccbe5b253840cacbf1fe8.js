@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "21e8d316fcfac149dbfa24bf311a4106",
+    "revision": "8924a511f383c77553e10c9bab152895",
     "url": "/Riffle/index.html"
   },
   {

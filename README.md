@@ -31,5 +31,5 @@ BETA GOAL:
 FINISH GOALS:
 * *Get this project onto Amazon AWS.*
 * *Fix any bugs along the way.*
-* *Test ALL components via unit testing. *
-* *Share with friends, family, etc. *
+* *Test ALL components via unit testing.*
+* *Share with friends, family, etc.*

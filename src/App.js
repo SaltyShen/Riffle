@@ -1,17 +1,18 @@
-import React, {Component} from 'react';
-import Navbar from './Component/Navbar'
-import LoginScreen from './Pages/loginscreen';
-import {BrowserRouter, Route} from 'react-router-dom'
-import './App.css';
+import React, { Component } from 'react';
+import PlayerPane from './Pages/PlayerPane/PlayerPane.js'
 
-export const authEndpoint = 'https://accounts.spotify.com/authorize';
-// Replace with your app's client ID, redirect URI and desired scopes
+const authEndpoint = 'https://accounts.spotify.com/authorize';
 const clientId = "9110bb9fbfc4422c85e722040cf63bc8";
-const redirectUri = "http://localhost:3000/callback";
+//const redirectUri = "https://shen-ui.github.io/Riffle/";
+const redirectUri = "http://localhost:3000/Riffle";
+
 const scopes = [
   "user-read-currently-playing",
   "user-read-playback-state",
-  "user-read-playback-state"
+  "user-read-recently-played",
+  "user-read-private",
+  "user-read-email",
+  "streaming"
 ];
 
 const hash = window.location.hash
@@ -26,63 +27,67 @@ const hash = window.location.hash
   }, {});
 window.location.hash = "";
 
-class App extends Component {
-  constructor(){
-    super();
-    this.state = {
-      token: null,
-      state: null
+export default class App extends Component {
+    constructor(){
+      super();
+        this.state = {
+            token: null
+        }
     }
-  }
-  componentDidMount() {
-    // Set token
-    let _token = hash.access_token;
-    if (_token) {
-      // Set token
-      this.setState({
-        token: _token
-      });
+    componentDidMount() {
+        // Set token
+        let _token = hash.access_token;
+        if (_token) {
+          // Set token
+          this.setState({
+            token: _token
+          });
+        }
     }
-  }
-  state = {
-    state: null,
-    token: null
-  }
-  render(){
-    
-    return (
-      
-        <BrowserRouter>
-          <div className="App">
-            <header className="App-header">
-            </header>
 
-              <Navbar>
-                <Route to="/home">Home</Route>
-                <Route to="/playlists">Playlists</Route>
-                <Route to="/about">About</Route>
-                <Route to="/profile">Profile</Route>
-              </Navbar>
-              
+    render(){
+        return(
+          
+            <div className="login-pane"
+            style = {{Margin: "74%"}}>
+
               {!this.state.token && (
-                <a
-                  className="btn btn--loginApp-link"
-                  href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`}>
-                  Login to Spotify
-                </a>
+              
+
+              <div className="loginbox">
+              <p>Welcome to the alpha version of Riffle! Currently developing the main components of the web app with react.js.
+              My roadmap is consists of: <br/>
+                1, Get full functionality and all react components created and functional.<br/>
+                2. Setting up the react dom and routers to appropriate pages with components.<br/>
+                3. Work on styling and choosing a better framework (Currently using material-ui so nothing is a complete eyesore).<br/>
+              <br/>
+              Login to see component developement!</p>
+              <a
+                className="btn btn--loginApp-link center"
+                href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`}>
+                Login to Spotify
+              </a>
+              </div>
+
               )}
+
               {this.state.token && (
-                  <div>Your token: {this.state.token}</div>
-              )}
+                
+                <div>
+                <PlayerPane token={this.state.token}/>
 
-            <footer className="App-footer">
-
-            </footer>
-
+                
+                {
+                  //<Player token={this.state.token}></Player>
+                  //<User token={this.state.token}></User>
+                  //<RecentlyPlayed token={this.state.token}></RecentlyPlayed>
+                  //<Playlists token={this.state.token}></Playlists>
+                }
+                </div>
+              )
+            }
+            
           </div>
-        </BrowserRouter>
-    );
-  }
+        );
+    }
 }
-
-export default App;

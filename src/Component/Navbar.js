@@ -4,6 +4,8 @@ import {Link} from '@material-ui/core';
 import logo from '../logo.svg'
 
 const Navbar = () => {
+    
+    
 
     return(
 
@@ -13,7 +15,6 @@ const Navbar = () => {
                 <div className="container">
                     
                     <ul className="right">
-                        <li><Link className="nav-tabs" to="/home">Home</Link></li>
                         <li><Link className="nav-tabs" to="/playlists">Playlists</Link></li>
                         <li><Link className="nav-tabs" to="/about">About</Link></li>
                         <li><Link className="nav-tabs" to="/profile">Profile</Link></li>
@@ -21,6 +22,7 @@ const Navbar = () => {
 
                 </div>
             </nav>
+            
 
     )
 }

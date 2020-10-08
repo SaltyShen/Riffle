@@ -1,12 +1,13 @@
 .App {
-  text-align: start;
+  text-align: "start";
+  background-color: "#191414";
 }
 /* css for logo*/
 
 .App-logo {
   margin-top: 10px;
   margin-left: 15px;
-  height: 50px;
+  height: 40px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -35,18 +36,12 @@
   color: black;
   text-decoration: none;
 }
-/*header*/
-.App-body {
-  background-color: #191414;
-  min-height: 100vh;
-  display: start;
-  flex-direction: column;
-  align-items: left;
-  justify-content: start;
-}
 
-.App-body loadText {
-  color: white;
+/*body*/
+
+.app-body{
+  height: "100%";
+  width: "100%";
 }
 
 

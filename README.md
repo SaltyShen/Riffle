@@ -24,12 +24,12 @@ After this, I'll need to interweive all these components, including all the page
 The alpha is finished! I'll then move forward by these iterations:
 
 BETA GOAL: 
-  1. Implement the collabrative playlist functionality via some asynchronous playback through a master device.
-  2. Create a "key login" system using Spring Boot to create the first iteration of the website API
-  3. Clean up design via a better design framework (I love you Google, but MaterialUI is very underwhelming).
+  #1. Implement the collabrative playlist functionality via some asynchronous playback through a master device.
+  #2. Create a "key login" system using Spring Boot to create the first iteration of the website API
+  #3. Clean up design via a better design framework (I love you Google, but MaterialUI is very underwhelming).
 
 FINISH GOALS:
-  1. Get this project onto Amazon AWS
-  2. Fix any bugs along the way.
-  3. Test ALL components via unit testing. 
-  4. Share with friends, family, etc. 
+  #1. Get this project onto Amazon AWS
+  #2. Fix any bugs along the way.
+  #3. Test ALL components via unit testing. 
+  #4. Share with friends, family, etc. 

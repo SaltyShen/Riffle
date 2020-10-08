@@ -19,18 +19,12 @@ import shadows from '@material-ui/core/styles/shadows';
 */
 
 class PlayerPane extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      token: null,
+      token: this.props.token,
     }
   }
-
-  componentDidMount() {
-    this.setState({
-      token: this.props.token
-    })
-  };
   
   render(){
     
@@ -50,6 +44,7 @@ class PlayerPane extends Component {
 
                 <Player token={this.state.token}/>
                 {
+                  console.log(this.props.token)
                   //<Player token={this.state.token}></Player>
                   //<User token={this.state.token}></User>
                   //<RecentlyPlayed token={this.state.token}></RecentlyPlayed>

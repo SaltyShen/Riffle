@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PlayerPane from './Pages/PlayerPane/PlayerPane.js'
+import icon from './logo.svg';
 
 const authEndpoint = 'https://accounts.spotify.com/authorize';
 const clientId = "9110bb9fbfc4422c85e722040cf63bc8";
-//const redirectUri = "https://shen-ui.github.io/Riffle/";
-const redirectUri = "http://localhost:3000/Riffle";
+const redirectUri = "https://shen-ui.github.io/Riffle/";
+//const redirectUri = "http://localhost:3000/Riffle";
 
 const scopes = [
   "user-read-currently-playing",
@@ -46,44 +47,48 @@ export default class App extends Component {
     }
 
     render(){
+
+
         return(
           
-            <div className="login-pane"
-            style = {{Margin: "74%"}}>
+            <div className="login-pane">
 
               {!this.state.token && (
               
 
-              <div className="loginbox">
-              <p>Welcome to the alpha version of Riffle! Currently developing the main components of the web app with react.js.
-              My roadmap is consists of: <br/>
-                1, Get full functionality and all react components created and functional.<br/>
-                2. Setting up the react dom and routers to appropriate pages with components.<br/>
-                3. Work on styling and choosing a better framework (Currently using material-ui so nothing is a complete eyesore).<br/>
-              <br/>
-              Login to see component developement!</p>
+              <div className="loginbox" style={{marginTop:"25vh", marginLeft:"10vw", marginRight:"60vw", marginButton:"60vh"}}>
+    
+              <article>
+              <img src={icon} style={{height:"40px", width:"40px"}}></img> 
+
+                <h4 style={{fontWeight:"bold" ,fontSize:"20px",font:"Circular,arial"}}>
+                  Riffle Collabrative Player 
+                  
+                </h4>
+
+                <p style={{fontWeight:"400",font: "Circular,ariel",fontSize:"17px"}}> 
+                  A fullstack project created by Peter Wang.<br/> 
+                  Create memorable playlists with anyone.
+                  </p>
+
+                <p style={{fontWeight:"100", font:"Circular,arial", color:"grey"}}> 
+                  Powered by Spotify.
+                  </p>
+               
+              
+              </article>
               <a
-                className="btn btn--loginApp-link center"
+                className="btn btn"
+                style={{marginTop:"20px", marginLeft: "30px", fontWeight:"400", font:"Circular,arial"}}
                 href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`}>
-                Login to Spotify
+                Login with Spotify
               </a>
               </div>
 
               )}
 
               {this.state.token && (
-                
-                <div>
                 <PlayerPane token={this.state.token}/>
-
-                
-                {
-                  //<Player token={this.state.token}></Player>
-                  //<User token={this.state.token}></User>
-                  //<RecentlyPlayed token={this.state.token}></RecentlyPlayed>
-                  //<Playlists token={this.state.token}></Playlists>
-                }
-                </div>
               )
             }
             

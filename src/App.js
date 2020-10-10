@@ -4,8 +4,8 @@ import icon from './logo.svg';
 
 const authEndpoint = 'https://accounts.spotify.com/authorize';
 const clientId = "9110bb9fbfc4422c85e722040cf63bc8";
-const redirectUri = "https://shen-ui.github.io/Riffle/";
-//const redirectUri = "http://localhost:3000/Riffle";
+//const redirectUri = "https://shen-ui.github.io/Riffle/";
+const redirectUri = "http://localhost:3000/Riffle";
 
 const scopes = [
   "user-read-currently-playing",
@@ -56,10 +56,21 @@ export default class App extends Component {
               {!this.state.token && (
               
 
-              <div className="loginbox" style={{marginTop:"25vh", marginLeft:"10vw", marginRight:"60vw", marginButton:"60vh"}}>
+              <div className="loginbox" 
+                   style={{
+                     paddingTop:"25vh", 
+                     marginLeft:"10vw", 
+                     marginRight:"0vw", 
+                     height:"100vh"
+                  }}>
     
               <article>
-              <img src={icon} style={{height:"40px", width:"40px"}}></img> 
+                <img src={icon} 
+                    style={{
+                      height:"40px", 
+                      width:"40px"
+                    }}
+                />
 
                 <h4 style={{fontWeight:"bold" ,fontSize:"20px",font:"Circular,arial"}}>
                   Riffle Collabrative Player 
@@ -78,8 +89,8 @@ export default class App extends Component {
               
               </article>
               <a
-                className="btn btn"
-                style={{marginTop:"20px", marginLeft: "30px", fontWeight:"400", font:"Circular,arial"}}
+                className="btn"
+                style={{marginTop:"20px", marginLeft: "5%", fontWeight:"400"}}
                 href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`}>
                 Login with Spotify
               </a>
@@ -91,7 +102,6 @@ export default class App extends Component {
                 <PlayerPane token={this.state.token}/>
               )
             }
-            
           </div>
         );
     }

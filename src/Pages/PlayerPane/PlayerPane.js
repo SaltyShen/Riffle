@@ -31,10 +31,15 @@ class PlayerPane extends Component {
     return (
       
         <BrowserRouter>
-          <div className="App">
+          <div className="App"
+               style = {{
+                 background: "#212121",
+                 height: "100vh"
+               }}>
             <header className="App-header">
             </header>
               <Navbar token={this.state.token}>
+                <Route path="/playlists">Player</Route>
                 <Route path="/playlists">Playlists</Route>
                 <Route path="/about">About</Route>
                 <Route path="/profile">Profile</Route>
@@ -44,7 +49,6 @@ class PlayerPane extends Component {
 
                 <Player token={this.state.token}/>
                 {
-                  console.log(this.props.token)
                   //<Player token={this.state.token}></Player>
                   //<User token={this.state.token}></User>
                   //<RecentlyPlayed token={this.state.token}></RecentlyPlayed>

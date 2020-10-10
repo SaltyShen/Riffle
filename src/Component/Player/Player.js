@@ -66,7 +66,6 @@ class Player extends Component {
           item: data.item,
           is_playing: data.is_playing,
           progress_ms: data.progress_ms
-          
         });
       
       }
@@ -82,17 +81,18 @@ class Player extends Component {
     const player = (this.state.item) ? (
     
       <div className="player-interface">
-        <h5>Currently Playing :</h5>
 
         <div className="cover-art" 
           style={{
             backgroundImage: "url(" + this.state.item.album.images[1].url + ")",
             height:this.state.item.album.images[1].height, 
             width:this.state.item.album.images[1].width,
-            marginTop: "50px"
+            boxShadow: "1px 3px 1px black",
+            marginTop:"10%",
+            margin: "0 auto"
           }}>
 
-          <p className="track-name" style={{textAlign: "center", }}>{this.state.item.name} {this.state.item.artists[0].name}</p>
+          <p className="track-name" style={{textAlign: "center", fontWeight:"700", color:"Black" }}>{this.state.item.name} {this.state.item.artists[0].name}</p>
           <p className="track-album-name" style={{textAlign: "center"}}>{this.state.item.album.name}</p>
           <PlayButton token = {this.state.token}/>
           <p style={{textAlign: "center"}}><b>prog:</b> {this.state.progress_ms}</p>
@@ -103,9 +103,17 @@ class Player extends Component {
     ) : (
 
       <div className="player-interface-notplaying">
-        <h5>Currently Playing :</h5>
-        <p>Nothing</p>
-        <p>Works properly</p>
+        <div className="empty-cover"
+             style = {{
+               margin: "0 auto",
+               marginTop: "10%",
+               height: "300px",
+               width: "295px",
+               boxShadow: "2px 3px 2px black",
+               background: "#121212"
+             }}>
+          <PlayButton token={this.props.token}/>
+        </div>
       </div>
 
     )

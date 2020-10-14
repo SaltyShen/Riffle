@@ -21,13 +21,7 @@
     <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/jquery-ui.min.js"></script>
 
     <!--In order to initialize the Web Playback SDK, you need to embed a single line of JavaScript inside of your application. -->
-    <script src="https://sdk.scdn.co/spotify-player.js"></script>
     <!--You are then required to define a window.onSpotifyWebPlaybackSDKReady method immediately.-->
-    <script>
-    window.onSpotifyWebPlaybackSDKReady = () => {
-      // You can now initialize Spotify.Player and use the SDK
-    };
-    </script>
 
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -39,8 +33,16 @@
   </head>
   
   <body>
-    
-    <div id="root"></div>
+
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script>
+      window.onSpotifyWebPlaybackSDKReady = () => {
+        window.Spotify = Spotify;
+        alert("Playback initiated");
+      }
+    </script>
+
+<div id="root"></div>
 
   </body>
 

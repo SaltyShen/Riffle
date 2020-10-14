@@ -6,9 +6,9 @@ import Navbar from '../../Component/Navbar'
 //import Player from './Component/Player/Player'
 
 
-import Player from '../../Component/Player/Player'
+import Player from '../../Component/Player'
 //import PlayButton from './Component/Buttons/PlayButton';
-import shadows from '@material-ui/core/styles/shadows';
+//import shadows from '@material-ui/core/styles/shadows';
 
 /* 
 

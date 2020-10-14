@@ -4,8 +4,8 @@ import icon from './logo.svg';
 
 const authEndpoint = 'https://accounts.spotify.com/authorize';
 const clientId = "9110bb9fbfc4422c85e722040cf63bc8";
-//const redirectUri = "https://shen-ui.github.io/Riffle/";
-const redirectUri = "http://localhost:3000/Riffle";
+const redirectUri = "https://shen-ui.github.io/Riffle/";
+//const redirectUri = "http://localhost:3000/Riffle";
 
 const scopes = [
   "user-read-currently-playing",
@@ -27,13 +27,16 @@ const hash = window.location.hash
     return initial;
   }, {});
 window.location.hash = "";
-
+//----------------CLASS------------------//
 export default class App extends Component {
     constructor(){
       super();
         this.state = {
-            token: null
+            token: null,
+            deviceId: ''
         }
+
+        this.initPlayer();
     }
     componentDidMount() {
         // Set token
@@ -44,18 +47,47 @@ export default class App extends Component {
             token: _token
           });
         }
-    }
 
+    }
+    initPlayer(){
+      window.onSpotifyWebPlaybackSDKReady = () => {
+        const token = this.state.token;
+        const player = new window.Spotify.Player({
+          name: 'Riffle Player',
+          getOAuthToken: cb => { cb(token); }
+        });
+      
+        // Error handling
+        player.addListener('initialization_error', ({ message }) => { console.error(message); });
+        player.addListener('authentication_error', ({ message }) => { console.error(message); });
+        player.addListener('account_error', ({ message }) => { console.error(message); });
+        player.addListener('playback_error', ({ message }) => { console.error(message); });
+      
+        // Playback status updates
+        player.addListener('player_state_changed', state => { console.log(state); });
+      
+        // Ready
+        player.addListener('ready', ({ device_id }) => {
+          console.log('Ready with Device ID', device_id);
+        });
+      
+        // Not Ready
+        player.addListener('not_ready', ({ device_id }) => {
+          console.log('Device ID has gone offline', device_id);
+        });
+      
+        // Connect to the player!
+        player.connect();
+      };
+    }
     render(){
 
 
         return(
           
             <div className="login-pane">
-
               {!this.state.token && (
               
-
               <div className="loginbox" 
                    style={{
                      paddingTop:"25vh", 
@@ -70,6 +102,7 @@ export default class App extends Component {
                       height:"40px", 
                       width:"40px"
                     }}
+                    alt="icon"
                 />
 
                 <h4 style={{fontWeight:"bold" ,fontSize:"20px",font:"Circular,arial"}}>

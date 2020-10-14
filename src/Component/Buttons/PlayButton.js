@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import $ from 'jquery';
+//import $ from 'jquery';
 import IconButton from "@material-ui/core/IconButton"
 import PlayIcon from "@material-ui/icons/PlayArrow"
 
@@ -12,7 +12,7 @@ class playbutton extends Component {
         }
     }
 
-    play(){
+    /*play(){
         function handleClick(e){
             $.ajax({
                 url: "https://api.spotify.com/v1/me/player/play",
@@ -45,6 +45,7 @@ class playbutton extends Component {
             });
         }
     }
+    */
 
     
 

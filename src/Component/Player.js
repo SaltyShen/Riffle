@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import $ from "jquery";
-import "./Player.css";
-import PlayButton from "../Buttons/PlayButton"
+import PlayButton from "./Buttons/PlayButton"
 
 /* 
 This is the main interface for music control.
@@ -32,21 +31,18 @@ class Player extends Component {
         xhr.setRequestHeader("Authorization", "Bearer " + this.props.token);
       },
       success: (data) => {
-        if (!data){
-          console.log("No return, try playing to call data.");
-        }
-
-        else{
+          if(!data){
+            console.log("Nothing Playing, try playing something")
+          }
+          else{
+            this.setState({
+              item: data.item,
+              is_playing: data.is_playing,
+              progress_ms: data.progress_ms
+              
+            });
+          }
           console.log("actual ajax call: " + data);
-          
-          this.setState({
-            item: data.item,
-            is_playing: data.is_playing,
-            progress_ms: data.progress_ms
-            
-          });
-        
-        }
       }
     });
   }

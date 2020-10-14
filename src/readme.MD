@@ -11,7 +11,7 @@ quite the most robust experience yet.
 # Oct 14th Standup
 
 We did it! We have the spotify webplaybacksdk up and running!
-This does create some more components to create.
+This doesn't come without added complexity. Now I need to create some more components.
 We now need to create a component that lists and selects a device for playback,
 but having this up and running has made this project into a actual usable web app.
 
@@ -23,3 +23,4 @@ but having this up and running has made this project into a actual usable web ap
 # Known bugs
 
 1. Router seems to not play well with my pages. Will need up look over documentation on reactRouter, Links, etc. and update code accordingly.
+2. React unit testing shows components perform better with inline css. Need to update all css to inline css.

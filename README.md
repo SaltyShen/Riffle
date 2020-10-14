@@ -1,7 +1,8 @@
 
 # introduction
 Hello and welcome to my project!
-The purpose of this app is to quickly create playlists over Spotify quickly.
+
+The purpose of this app is to quickly create playlists over Spotify and generate collab playlists.
 
 I was inspired to create this with COVID and my issue with passing my phone around
 for others to add songs to a queue or a playlist. I figured, why hasn't somebody stream

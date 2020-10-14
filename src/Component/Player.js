@@ -42,7 +42,7 @@ class Player extends Component {
               
             });
           }
-          console.log("actual ajax call: " + data);
+          //console.log("actual ajax call: " + data);
       }
     });
   }

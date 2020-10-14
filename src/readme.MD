@@ -1,18 +1,25 @@
-Hello and Welcome to my Spotify web app!
 
+#introduction
+Hello and welcome to my project!
 The purpose of this app is to quickly create playlists over Spotify quickly.
-The inspiration for this web app was I was bothered by the fact I listen to the same
-playlists over and over again on Spotify. 
 
-I thought, "Why not make a web app that makes searching new music quick?"
+I was inspired to create this with COVID and my issue with passing my phone around
+for others to add songs to a queue or a playlist. I figured, why hasn't somebody stream
+lined collabrative playlists? Spotify currently has local listening as a beta and it isn't
+quite the most robust experience yet.
 
-My intention is to create a web app with coverart of songs that autoplay onHover() 
-with the mouse so you can get a quick preview of a song and add them all into a 
-playlist based on a selection of genre, artist, etc. 
+# Oct 14th Standup
 
-Currently I have OAuth completed and am able to grab the access_token.
- The next few objectives will be to create ajax calls for the various things 
- that the Spotify API offers and then to put it together.
+We did it! We have the spotify webplaybacksdk up and running!
+This does create some more components to create.
+We now need to create a component that lists and selects a device for playback,
+but having this up and running has made this project into a actual usable web app.
 
+# Today's Menu
 
-future developement will be noted on this MD.
+1. Update coverart with hooks to update via next, prev, current song.
+2. Create the device_id component that will update state with device_id.
+
+# Known bugs
+
+1. Router seems to not play well with my pages. Will need up look over documentation on reactRouter, Links, etc. and update code accordingly.

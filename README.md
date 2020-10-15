@@ -4,8 +4,9 @@ Hello and welcome to my project!
 
 The purpose of this app is to quickly create playlists over Spotify and generate collab playlists.
 
-I was inspired to create this with COVID and my issue with passing my phone around
-for others to add songs to a queue or a playlist. I figured, why hasn't somebody stream
+I was inspired to create this web app at the peak of COVID when PPE wasn't available.
+My friends and I were unable to see each other, so I created this to jam out from a distance!
+For others to add songs to a queue or a playlist. I figured, why hasn't somebody stream
 lined collabrative playlists? Spotify currently has local listening as a beta and it isn't
 quite the most robust experience yet.
 

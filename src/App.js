@@ -4,8 +4,8 @@ import icon from './logo.svg';
 
 const authEndpoint = 'https://accounts.spotify.com/authorize';
 const clientId = "9110bb9fbfc4422c85e722040cf63bc8";
-//const redirectUri = "https://shen-ui.github.io/Riffle/";
-const redirectUri = "http://localhost:3000/Riffle";
+const redirectUri = "https://shen-ui.github.io/Riffle/";
+//const redirectUri = "http://localhost:3000/Riffle";
 
 const scopes = [
   "user-read-currently-playing",

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Track from '../../Component/Track/Track'
+import Track from '../Component/Track/Track';
 import $ from 'jquery';
 /*
 
@@ -56,13 +56,15 @@ class RecentlyPlayed extends Component{
         )
 
         return prevPlayed;
-    }
+    };
+    
     render(){
         return(
-            <div>
-                <h2>Recently Played</h2>
-                {this.getEachPrev(this.props.token)
-                }
+            <div className="recently-played">
+                <h4>Recently Played</h4>
+                <ul style={{listStyleType:"none"}}>
+                {this.getEachPrev(this.props.token)}
+                </ul>
             </div>
         )
     }

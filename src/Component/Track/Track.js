@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
+import './track.css'
 import $ from 'jquery';
-import Card from '@material-ui/core/Card';
 /* 
 
     Takes Props:
@@ -20,7 +20,6 @@ class Track extends Component {
             artist: [],
             track_cover_art_url: null,
             preview_url: null,
-            duration_ms: null,
         }
     }
     componentDidMount(){
@@ -55,12 +54,27 @@ class Track extends Component {
     }
     
     render(){
+        const lastElement = this.state.artist.length;
+        var artists = this.state.artist.map(function(artist, i){
+            if (lastElement === i + 1){
+                return(<b key={i}>{artist['name']}</b>);
+            }
+            else{
+                return(<b key={i}>{artist['name'] + ", "}</b>);
+            }
+        });
+
         return(
-            <Card>
-            <p><b>{this.state.title}</b></p>
-            <img src={this.state.track_cover_art_url} alt="album art"></img>
-            <p>{this.state.duration_ms/1000/60}</p>
-            </Card>
+            <li className="track">
+                    <img className="album-art" 
+                        src={this.state.track_cover_art_url} 
+                        alt="album art"
+                    />  
+                    <div className="descriptor">
+                        <p className="song-title">{this.state.title}</p>
+                        <p className="song-artist">{artists}</p>
+                    </div>
+            </li>
 
         )
     }

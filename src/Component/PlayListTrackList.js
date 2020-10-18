@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Track from '../Track/Track';
+import Track from './Track/Track';
 import $ from 'jquery';
 
 /* 

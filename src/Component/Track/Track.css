@@ -1,0 +1,19 @@
+.track{
+
+    width:100vw;
+    height:20vh;
+}
+.album-art{
+
+    height: 19.96vh;
+    float: left;
+
+
+}
+.track .descriptor {
+    color:white;
+    text-align: center;
+    padding:4%;
+    height:20vh;
+    background-color: rgb(26, 26, 26);
+}

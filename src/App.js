@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PlayerPane from './Pages/PlayerPane/PlayerPane.js'
+import PlayerPane from './Pages/PlayerPane.js'
 import icon from './logo.svg';
 
 const authEndpoint = 'https://accounts.spotify.com/authorize';
@@ -31,18 +31,19 @@ window.location.hash = "";
 export default class App extends Component {
     constructor(){
       super();
-        this.state = {
+
+          this.state = {
             token: null,
             deviceId: ''
-        }
-
-        this.initPlayer();
+        
+      }
     }
     componentDidMount() {
         // Set token
         let _token = hash.access_token;
         if (_token) {
           // Set token
+          
           this.setState({
             token: _token
           });
@@ -69,6 +70,7 @@ export default class App extends Component {
         // Ready
         player.addListener('ready', ({ device_id }) => {
           console.log('Ready with Device ID', device_id);
+          this.setState = {deviceid: device_id};
         });
       
         // Not Ready
@@ -77,7 +79,11 @@ export default class App extends Component {
         });
       
         // Connect to the player!
-        player.connect();
+        player.connect().then(success =>{
+          if(success) {
+            console.log("Player connected!")
+          }
+        });
       };
     }
     render(){
@@ -132,7 +138,7 @@ export default class App extends Component {
               )}
 
               {this.state.token && (
-                <PlayerPane token={this.state.token}/>
+                <PlayerPane token={this.state.token} player={this.player}/>
               )
             }
           </div>

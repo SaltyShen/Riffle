@@ -84,8 +84,7 @@ class Player extends Component {
             height:this.state.item.album.images[1].height, 
             width:this.state.item.album.images[1].width,
             boxShadow: "1px 3px 1px black",
-            marginTop:"10%",
-            margin: "0 auto"
+            marginTop:"7.5vh"
           }}>
 
           <p className="track-name" style={{textAlign: "center", fontWeight:"700", color:"Black" }}>{this.state.item.name} {this.state.item.artists[0].name}</p>
@@ -98,11 +97,11 @@ class Player extends Component {
 
     ) : (
 
-      <div className="player-interface-notplaying">
+      <div className="player-interface-notplaying"
+             style = {{height: "50vh", paddingTop:'10vh'}}>
         <div className="empty-cover"
              style = {{
-               margin: "0 auto",
-               marginTop: "10%",
+               margin:"0 auto",
                height: "300px",
                width: "295px",
                boxShadow: "2px 3px 2px black",

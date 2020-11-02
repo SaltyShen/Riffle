@@ -1,0 +1,47 @@
+
+.user-pane{
+    position: fixed;
+    right: 0;
+    width: 120px;
+    height: auto;
+}
+
+.user-btn{
+    margin: 8px 20px 8px;
+    background-size: 50px 50px;
+    border-radius: 45px;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 0;
+}
+
+.user-btn:hover{
+    -webkit-filter: brightness(70%);
+    transform:scale(1.1);
+}
+.drop-menu{
+    position: fixed;
+    background-color:grey;
+    width:120px;
+    text-align: center;
+    line-height: 2;
+    border-radius: 12px;
+    margin: 67px 0px;
+
+}
+
+@media (max-width: 400px){
+    .user-pane{
+        height: 50px;
+    }
+    .user-btn {
+        margin: 6px 14px 5px 10px;
+        height: 45px;
+        width: 45px;
+    }
+    .drop-menu{
+        margin-top: 60px;
+
+    }
+}

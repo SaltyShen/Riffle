@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import $ from 'jquery';
+import './User.css';
 
 /*
 
@@ -13,8 +14,8 @@ import $ from 'jquery';
 */
 
 class User extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             display_name: null,
             email: null,
@@ -22,12 +23,15 @@ class User extends Component {
             id: null,
             followers: null,
             profile_pic: null,
-            product: null
-        }
-    }
+            showMenu: false
+        };
+        this.renderMenu = this.renderMenu.bind(this);
+    };
+
     componentDidMount(){
         this.getUserData();
-    }
+    };
+
     getUserData(){
         $.ajax({
             url: "https://api.spotify.com/v1/me/",
@@ -46,24 +50,40 @@ class User extends Component {
                     profile_pic: data.images[0].url,
                     product: data.product
                 });
-            },
-            fail: () => {
-                alert("API Playlist call failed.");
-            } 
-            
+            }
         })
+    };
+
+    renderMenu(){
+        this.setState(prevState => ({
+            showMenu: !prevState.showMenu
+            })
+        );
+
+     
     }
-    
+
     render(){
         return(
-            <div>
-            <h1>User</h1>
+            <div className="user-pane">
+                <button className="user-btn"
+                    onClick={this.renderMenu}
+                    style={{
+                        backgroundImage:`url(${this.state.profile_pic})`
+                    }}>
 
-            <img src={this.state.profile_pic} alt="pfpic"></img>
-            <p><b>ID</b>: {this.state.id}</p>
-            <p><b>PRODUCT</b>: {this.state.product}</p>
-            <p><b>FOLLOWERS</b>: {this.state.followers}</p>
-            
+                </button>
+            {
+                this.state.showMenu ? (
+                    <div className="drop-menu">
+                        <p>{this.state.id}</p>
+                        <p>{this.state.product}</p>
+                        <p>{this.state.followers}</p>
+                    </div>
+                ) : (
+                    null
+                )
+            }
             </div>
         )
     }   

@@ -1,0 +1,18 @@
+.search-bar{
+    width: 50vw !important;
+    height: 25px !important;
+    background-color: white !important;
+    border-radius: 50px !important;
+    position: absolute !important;
+    text-align: center;
+    top: 2vh;
+    right: 24vw;
+
+}
+.search-bar::placeholder{
+    text-align: center;
+}
+
+.search-bar:focus::placeholder{
+    color: transparent;
+}

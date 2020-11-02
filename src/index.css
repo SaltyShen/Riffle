@@ -5,14 +5,14 @@ body .login-body{
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  background-color: linear-gradient(35deg, #CCFFFF, #FFCCCC);
 }
 
 footer {
   position: fixed;
+
   left: 0;
   bottom: 0;
-  width: 100vw;
   height: 10vh;
   background-color:	#121212;
   color: white;

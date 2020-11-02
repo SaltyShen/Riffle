@@ -4,8 +4,8 @@ import icon from './logo.svg';
 
 const authEndpoint = 'https://accounts.spotify.com/authorize';
 const clientId = "9110bb9fbfc4422c85e722040cf63bc8";
-const redirectUri = "https://shen-ui.github.io/Riffle/";
-//const redirectUri = "http://localhost:3000/Riffle";
+//const redirectUri = "https://shen-ui.github.io/Riffle/";
+const redirectUri = "http://localhost:3000/Riffle";
 
 const scopes = [
   "user-read-currently-playing",
@@ -32,63 +32,52 @@ export default class App extends Component {
     constructor(){
       super();
 
+      var cookieToken = this.checkCookie();
+      //if cookie doesnt exist wait
+      if(cookieToken != null){
           this.state = {
-            token: null,
-            deviceId: ''
-        
+            token: cookieToken,
+          }
+      }
+      //set a new cookie if it not created
+      else {
+        this.state = {
+          token: null
+        }
       }
     }
+
     componentDidMount() {
-        // Set token
+        // Set token if cookie was empty
+      if(!this.state.token){
         let _token = hash.access_token;
         if (_token) {
           // Set token
-          
           this.setState({
             token: _token
           });
+
+        //spotify tokens last 1 hour. 
+        //will need to create something like a "still listening"
+        //pane to refresh token.
+        document.cookie=`token=${_token}`;
         }
-    this.initPlayer();
+      }//endif
     }
-    initPlayer(){
-      window.onSpotifyWebPlaybackSDKReady = () => {
-        const token = this.state.token;
-        const player = new window.Spotify.Player({
-          name: 'Riffle Player',
-          getOAuthToken: cb => { cb(token); }
-        });
-      
-        // Error handling
-        player.addListener('initialization_error', ({ message }) => { console.error(message); });
-        player.addListener('authentication_error', ({ message }) => { console.error(message); });
-        player.addListener('account_error', ({ message }) => { console.error(message); });
-        player.addListener('playback_error', ({ message }) => { console.error(message); });
-      
-        // Playback status updates
-        player.addListener('player_state_changed', state => { console.log(state); });
-      
-        // Ready
-        player.addListener('ready', ({ device_id }) => {
-          console.log('Ready with Device ID', device_id);
-          this.setState = {deviceid: device_id};
-        });
-      
-        // Not Ready
-        player.addListener('not_ready', ({ device_id }) => {
-          console.log('Device ID has gone offline', device_id);
-        });
-      
-        // Connect to the player!
-        player.connect().then(success =>{
-          if(success) {
-            console.log("Player connected!")
-          }
-        });
-      };
+    // set Cookie: An expiration date (24 hours and token).
+    // checkCookie : Will return the token set in cookie if not expired. 
+    checkCookie(){
+      var cookie = document.cookie;
+      var match = cookie.match(new RegExp('(^| )token=([^;]+)'));
+      if (match) {
+        return(match[2]);
+      }
+      else{
+        return null;
+      }
     }
+
     render(){
-
-
         return(
           
             <div className="login-pane">
@@ -97,9 +86,9 @@ export default class App extends Component {
               <div className="loginbox" 
                    style={{
                      paddingTop:"25vh", 
-                     marginLeft:"10vw", 
-                     marginRight:"0vw", 
-                     height:"100vh"
+                     paddingLeft:"10vw", 
+                     height:"100vh",
+                     background: 'linear-gradient(35deg, #CCFFFF, #FFCCCC)'
                   }}>
     
               <article>
@@ -129,7 +118,7 @@ export default class App extends Component {
               </article>
               <a
                 className="btn"
-                style={{marginTop:"20px", marginLeft: "5%", fontWeight:"400"}}
+                style={{marginTop:"20px", marginLeft: "5%", fontWeight:"600", borderRadius:"25px"}}
                 href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`}>
                 Login with Spotify
               </a>
@@ -138,7 +127,7 @@ export default class App extends Component {
               )}
 
               {this.state.token && (
-                <PlayerPane token={this.state.token} player={this.player}/>
+                <PlayerPane token={this.state.token}/>
               )
             }
           </div>

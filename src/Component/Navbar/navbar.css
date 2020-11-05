@@ -6,28 +6,26 @@
     display:flex;
     width: 100%;
 
-    transition-timing-function: ease-in;
-    transition: all 0.5s;
 }
 
 .nav-wrapper .nav-logo{
     position: fixed;
     left: 0;
-    height:5vh;
-    width: 5vw;
-    margin: 8px;
-    float: left;
+    top: 0;
+    height:50px;
+    width: 50px;
+    margin: 10px 0px 0px 10px;
 }
 
 @media (max-width: 480px){
-    .container .nav-li{
-        font-size: 12px;
-    }
+
     .nav-wrapper .nav-logo{
         height: auto;
         width:10vw;
+        margin: 0px, 0px, 0px, 5px;
     }
     .nav-wrapper{
         height: 7vh;
+        background-color: #1DB954;
     }
 }

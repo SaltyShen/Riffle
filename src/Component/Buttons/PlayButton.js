@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-//import $ from 'jquery';
-import IconButton from "@material-ui/core/IconButton"
-import PlayIcon from "@material-ui/icons/PlayArrow"
+import $ from 'jquery';
+import './playButton.css'
 
 class playbutton extends Component {
     constructor(props){
@@ -10,58 +9,69 @@ class playbutton extends Component {
             token: this.props.token,
             playToggle: false
         }
+        this.play = this.play.bind(this);
+        this.pause = this.pause.bind(this);
     }
 
-    /*play(){
-        function handleClick(e){
-            $.ajax({
-                url: "https://api.spotify.com/v1/me/player/play",
-                beforeSend: (xhr) => {
-                xhr.setRequestHeader("Authorization", "Bearer " + this.props.token);
-                },
-                success: () => {
-                        console.log('play: success!');
-                        this.setState({
-                            playToggle: true
-                        })
-                }
-            });
-        }
+    play(){
+
+        $.ajax({
+            url: "https://api.spotify.com/v1/me/player/play",
+            type: "PUT",
+            headers: {
+                'Authorization' : 'Bearer ' + this.props.token
+            },
+            dataType: "json",
+            contentType: "application/json",
+            success: () => {
+                console.log(`click ${this.state.playToggle}`);
+                this.setState(prevState => ({
+                    playToggle: !prevState.playToggle
+                    })
+                );
+            },
+            error: () => {
+                console.log("something went wrong play");
+            }
+        });   
     }
     pause(){
-        function handleClick(e){
-            $.ajax({
-                url: "https://api.spotify.com/v1/me/player/pause",
-                beforeSend: (xhr) => {
-                xhr.setRequestHeader("Authorization", "Bearer " + this.props.token);
-                },
-                success: () => {
-                        console.log('pause: success!');
-                        this.setState({
-                            playToggle:false
-                        })
 
-                }
-            });
-        }
+        $.ajax({
+            url: "https://api.spotify.com/v1/me/player/pause",
+            type: "PUT",
+            headers: {
+                'Authorization' : 'Bearer ' + this.props.token
+            },
+            success: () => {
+                console.log(`click ${this.state.playToggle}`);
+                this.setState(prevState => ({
+                    playToggle: !prevState.playToggle
+                    })
+                );
+            },
+            error: () => {
+                console.log("something went wrong pause");
+            }
+        });   
     }
-    */
-
+    
     
 
     render(){
 
-        var playButton = (this.state.play === false) ? (
-            <IconButton aria-label="Play" onClick={this.play}>
-                <PlayIcon />
-            </IconButton>
-          ) : (
-            <IconButton aria-label="Play" onClick={this.pause}>
 
-            </IconButton>
-          )
-
-        return(playButton);
+        return(
+            <div>
+            {
+                this.state.playToggle ? (
+                    <button className='play-button' onClick={this.play}>Play</button>
+                ) : (
+                    <button className='pause-button' onClick={this.pause}>Pause</button>
+                )
+            }
+            </div>
+        );
     }
 };
 

@@ -122,6 +122,15 @@ export default class App extends Component {
                 href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`}>
                 Login with Spotify
               </a>
+
+              <footer class="nav-down">
+                <p class="footer-sig">Developed to share by <b>Peter Wang</b></p>
+                <div>
+                  <a href="mailto:peterhuiwang1995@gmail.com"><i class="material-icons">email</i></a>
+                  <a href="https://www.linkedin.com/in/shenhwang/"><i class="material-icons">work</i></a>
+                  <a href="https://github.com/shen-ui"><i class="material-icons">code</i></a>
+                </div>
+              </footer>
               </div>
 
               )}

@@ -71,13 +71,12 @@ class PlayerPane extends Component {
           <div className="App"
                style = {{
                  background: "#212121",
-      
+                 width: "100%"
                }}>
             <header className="App-header">
             </header>
               <Navbar token={this.state.token}/>
                 <div>
-
                 <Player token={this.state.token}/>
                 <RecentlyPlayed token={this.state.token}></RecentlyPlayed>
                 <Playlists token={this.state.token}></Playlists>

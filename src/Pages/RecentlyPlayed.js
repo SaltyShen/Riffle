@@ -61,7 +61,7 @@ class RecentlyPlayed extends Component{
     render(){
         return(
             <div className="recently-played">
-                <h4>Recently Played</h4>
+
                 <ul style={{listStyleType:"none"}}>
                 {this.getEachPrev(this.props.token)}
                 </ul>

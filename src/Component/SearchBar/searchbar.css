@@ -1,12 +1,12 @@
 .search-bar{
     width: 50vw !important;
-    height: 25px !important;
-    background-color: white !important;
+    height: 30px !important;
+    background-color: rgb(243, 243, 243) !important;
     border-radius: 50px !important;
     position: absolute !important;
     text-align: center;
-    top: 2vh;
-    right: 24vw;
+    top: 17px;
+    right: 26vw;
 
 }
 .search-bar::placeholder{
@@ -15,4 +15,10 @@
 
 .search-bar:focus::placeholder{
     color: transparent;
+}
+
+@media (max-width: 480px){
+    .search-bar{
+        top: 15px !important;
+    }
 }

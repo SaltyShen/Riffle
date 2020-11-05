@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Riffle/static/css/main.f99c1f70.chunk.css",
-    "main.js": "/Riffle/static/js/main.ec61ac76.chunk.js",
-    "main.js.map": "/Riffle/static/js/main.ec61ac76.chunk.js.map",
+    "main.css": "/Riffle/static/css/main.3d70bb0c.chunk.css",
+    "main.js": "/Riffle/static/js/main.654b7072.chunk.js",
+    "main.js.map": "/Riffle/static/js/main.654b7072.chunk.js.map",
     "runtime-main.js": "/Riffle/static/js/runtime-main.cdbe08dd.js",
     "runtime-main.js.map": "/Riffle/static/js/runtime-main.cdbe08dd.js.map",
     "static/js/2.09d5f7bb.chunk.js": "/Riffle/static/js/2.09d5f7bb.chunk.js",
     "static/js/2.09d5f7bb.chunk.js.map": "/Riffle/static/js/2.09d5f7bb.chunk.js.map",
     "index.html": "/Riffle/index.html",
-    "precache-manifest.e8e907b4fbc75e6f120756b0923c342d.js": "/Riffle/precache-manifest.e8e907b4fbc75e6f120756b0923c342d.js",
+    "precache-manifest.754f9a091a60ba4b556b598dd7c8015a.js": "/Riffle/precache-manifest.754f9a091a60ba4b556b598dd7c8015a.js",
     "service-worker.js": "/Riffle/service-worker.js",
-    "static/css/main.f99c1f70.chunk.css.map": "/Riffle/static/css/main.f99c1f70.chunk.css.map",
+    "static/css/main.3d70bb0c.chunk.css.map": "/Riffle/static/css/main.3d70bb0c.chunk.css.map",
     "static/js/2.09d5f7bb.chunk.js.LICENSE.txt": "/Riffle/static/js/2.09d5f7bb.chunk.js.LICENSE.txt",
     "static/media/logo.svg": "/Riffle/static/media/logo.bf2c47e6.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.cdbe08dd.js",
     "static/js/2.09d5f7bb.chunk.js",
-    "static/css/main.f99c1f70.chunk.css",
-    "static/js/main.ec61ac76.chunk.js"
+    "static/css/main.3d70bb0c.chunk.css",
+    "static/js/main.654b7072.chunk.js"
   ]
 }

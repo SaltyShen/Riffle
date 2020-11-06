@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "73224b4696f96419fa40d17245305390",
+    "revision": "4734f5b925e7718f121c5458f068d885",
     "url": "/Riffle/index.html"
   },
   {
-    "revision": "122937511df881f17098",
-    "url": "/Riffle/static/css/main.aab39ab7.chunk.css"
+    "revision": "c01a28bb1d285a9728ef",
+    "url": "/Riffle/static/css/main.df6f345a.chunk.css"
   },
   {
     "revision": "9d9c4e72b44870427a05",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Riffle/static/js/2.b2945f88.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "122937511df881f17098",
-    "url": "/Riffle/static/js/main.eaed9d2d.chunk.js"
+    "revision": "c01a28bb1d285a9728ef",
+    "url": "/Riffle/static/js/main.9a99ec98.chunk.js"
   },
   {
     "revision": "0084ea5ed7d14274a8d6",

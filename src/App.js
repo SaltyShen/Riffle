@@ -4,8 +4,8 @@ import icon from './logo.svg';
 
 const authEndpoint = 'https://accounts.spotify.com/authorize';
 const clientId = "9110bb9fbfc4422c85e722040cf63bc8";
-//const redirectUri = "https://shen-ui.github.io/Riffle/";
-const redirectUri = "http://localhost:3000/Riffle";
+const redirectUri = "https://shen-ui.github.io/Riffle/";
+//const redirectUri = "http://localhost:3000/Riffle";
 
 const scopes = [
   "user-read-currently-playing",
@@ -113,8 +113,7 @@ export default class App extends Component {
                 <p style={{fontWeight:"100", font:"Circular,arial", color:"grey"}}> 
                   Powered by Spotify.
                   </p>
-               
-              
+                  
               </article>
               <a
                 className="btn"
@@ -123,12 +122,12 @@ export default class App extends Component {
                 Login with Spotify
               </a>
 
-              <footer class="nav-down">
-                <p class="footer-sig">Developed to share by <b>Peter Wang</b></p>
+              <footer className="nav-down">
+                <p className="footer-sig">Developed to share by <b>Peter Wang</b></p>
                 <div>
-                  <a href="mailto:peterhuiwang1995@gmail.com"><i class="material-icons">email</i></a>
-                  <a href="https://www.linkedin.com/in/shenhwang/"><i class="material-icons">work</i></a>
-                  <a href="https://github.com/shen-ui"><i class="material-icons">code</i></a>
+                  <a href="mailto:peterhuiwang1995@gmail.com"><i className="material-icons">email</i></a>
+                  <a href="https://www.linkedin.com/in/shenhwang/"><i className="material-icons">work</i></a>
+                  <a href="https://github.com/shen-ui"><i className="material-icons">code</i></a>
                 </div>
               </footer>
               </div>

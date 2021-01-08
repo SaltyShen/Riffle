@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import $ from "jquery";
 import PlayButton from "../Buttons/PlayButton"
+import ForwardButton from "../Buttons/ForwardButton"
+import BackButton from "../Buttons/BackButton"
 import './player.css'
+import ProgBar from '../ProgBar/ProgBar';
 /* 
 This is the main interface for music control.
 child components are: 
@@ -17,12 +20,17 @@ class Player extends Component {
     this.state = {
       token: this.props.token,
       item: null,
-      is_playing: null,
-      progress_ms: null
+      progress_ms: null,
+      duration_ms: null,
+      is_playing: null
     }
+    this.getPlayerDataContext = this.getPlayerDataContext.bind(this);
   }
   componentDidMount(){
-    this.getPlayerDataContext();
+    setInterval( () => {
+      this.getPlayerDataContext();
+    },1000);
+
   }
 
   getPlayerDataContext(){
@@ -30,7 +38,7 @@ class Player extends Component {
       url: "https://api.spotify.com/v1/me/player/",
       type: "GET",
       beforeSend: (xhr) => {
-        xhr.setRequestHeader("Authorization", "Bearer " + this.props.token);
+        xhr.setRequestHeader("Authorization", "Bearer " + this.state.token);
       },
       success: (data) => {
           if(!data){
@@ -40,10 +48,12 @@ class Player extends Component {
             this.setState({
               item: data.item,
               is_playing: data.is_playing,
-              progress_ms: data.progress_ms
+              progress_ms: data.progress_ms,
+              duration_ms: data.item.duration_ms
             });
+            //console.log(this.state.is_playing)
+            //console.log(`progress: ${this.state.progress_ms} /n duration: ${this.state.duration_ms}`);
           }
-          //console.log("actual ajax call: " + data);
       }
     });
   }
@@ -53,9 +63,10 @@ class Player extends Component {
       url: "https://api.spotify.com/v1/me/player/currently-playing",
       type: "GET",
       beforeSend: (xhr) => {
-        xhr.setRequestHeader("Authorization", "Bearer " + this.props.token);
+        xhr.setRequestHeader("Authorization", "Bearer " + this.state.token);
       },
       success: (data) => {
+        
         if(!data){
           console.log("nothing currently playing, try playing something!")
         }
@@ -65,11 +76,12 @@ class Player extends Component {
             is_playing: data.is_playing,
             progress_ms: data.progress_ms
           });
+        
         }
       }
     });
   }
-  
+
   render(){
     // Rendering will cause an error pre-flight
     // ternary operator to handle null error
@@ -89,10 +101,21 @@ class Player extends Component {
           
         </div>
         <div className="control-pane">
-          <p className="track-name" style={{textAlign: "center", fontWeight:"700"}}>{this.state.item.name} {this.state.item.artists[0].name}</p>
-          <p className="track-album-name" style={{textAlign: "center"}}>{this.state.item.album.name}</p>
-          <p style={{textAlign: "center"}}><b>prog:</b> {this.state.progress_ms}</p>
-          <PlayButton token={this.state.token}/>
+          <div className="details-pane">
+            <p className="track-name" style={{textAlign: "center", fontWeight:"700"}}>{this.state.item.name}</p>
+            <p className="track-album-name" style={{textAlign: "center"}}>{this.state.item.album.name}</p>
+          </div>
+          <div className="control-panel">
+            <div className="control-cluster">
+              <BackButton token={this.state.token}/>
+              <PlayButton token={this.state.token} playToggle={this.state.is_playing}/>
+              <ForwardButton token={this.state.token}/>
+            </div>
+              <ProgBar progress_ms={this.state.progress_ms} 
+                       duration_ms={this.state.duration_ms}
+
+                       />
+          </div>
         </div>
       </div>
 
@@ -100,7 +123,6 @@ class Player extends Component {
 
       <div className="player-interface">
         <div className="empty-cover">
-          <PlayButton token={this.state.token}/>
         </div>
       </div>
 

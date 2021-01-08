@@ -1,6 +1,11 @@
-play-button{
-    align-self: center;
+.play-button{
+    font-weight: 700;
+    border-radius: 50px;
+    width: 5vw;
+    height: 3vh;
+    color: black !important;
 }
-pause-button{
-    margin-left: 40vh;
+
+.bb-button{
+    
 }

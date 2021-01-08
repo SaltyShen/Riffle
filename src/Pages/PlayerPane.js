@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import { BrowserRouter } from 'react-router-dom'
 
+import $ from 'jquery';
 import Navbar from '../Component/Navbar/Navbar.js'
-
-
 import Player from '../Component/Player/Player'
 import Playlists from './Playlist'
 import RecentlyPlayed from './RecentlyPlayed'
@@ -21,12 +19,12 @@ class PlayerPane extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      token: this.props.token
+      token: this.props.token,
+      device_id: null,
     }
     this.initPlayer();
-
   }
-  
+
   initPlayer(){
     window.onSpotifyWebPlaybackSDKReady = () => {
       const token = this.state.token;
@@ -46,7 +44,10 @@ class PlayerPane extends Component {
       // Ready
       player.addListener('ready', ({ device_id }) => {
         console.log('Ready with Device ID', device_id);
-        this.setState = {deviceid: device_id};
+        this.setState({
+          device_id: device_id,
+        });
+        this.setDevicePlayBack();
       });
     
       // Not Ready
@@ -60,14 +61,35 @@ class PlayerPane extends Component {
           console.log("Player connected!")
         }
       });
+      
       return player;
     };
   }
+
+  setDevicePlayBack(){
+    $.ajax({
+        url: "https://api.spotify.com/v1/me/player",
+        'Content-Type' : 'application/json',
+        headers: {
+            'Authorization' : 'Bearer ' + this.props.token
+        },
+        type: "PUT",
+        data: JSON.stringify({
+          "device_ids": [`${this.state.device_id}`]
+        }),
+        success: (data) => {        
+          console.log("successful: " + data);
+        },
+        error: (data) => {
+          console.log(data)
+        }
+    })
+  };
+
   render(){
     
     return (
       
-        <BrowserRouter>
           <div className="App"
                style = {{
                  background: "#212121",
@@ -86,10 +108,8 @@ class PlayerPane extends Component {
                   //<RecentlyPlayed token={this.state.token}></RecentlyPlayed>
                   //<Playlists token={this.state.token}></Playlists>
                 }
-
                 </div>
           </div>
-        </BrowserRouter>
     )
   }
 }

@@ -10,10 +10,8 @@ body .login-body{
 
 footer {
   position: fixed;
-
   left: 0;
   bottom: 0;
-  height: 4vh;
   background-color:	#121212;
   color: white;
   text-align: center;
@@ -59,9 +57,4 @@ footer .material-icons {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-@media (max-width:480px){
-  footer{
-    height: 10vh;
-  }
 }

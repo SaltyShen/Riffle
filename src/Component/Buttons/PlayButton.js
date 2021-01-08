@@ -1,20 +1,20 @@
 import React, {Component} from 'react';
 import $ from 'jquery';
-import './playButton.css'
-
-class playbutton extends Component {
+import './playbutton.css';
+/* 
+    props: did not destructure, only one prop token for ajax call.
+*/
+class PlayButton extends Component{
     constructor(props){
         super(props);
         this.state = {
             token: this.props.token,
-            playToggle: false
-        }
-        this.play = this.play.bind(this);
-        this.pause = this.pause.bind(this);
+            playToggle: this.props.playToggle
+        };
+        this.play = this.play.bind(this)
+        this.pause = this.pause.bind(this)
     }
-
     play(){
-
         $.ajax({
             url: "https://api.spotify.com/v1/me/player/play",
             type: "PUT",
@@ -24,7 +24,6 @@ class playbutton extends Component {
             dataType: "json",
             contentType: "application/json",
             success: () => {
-                console.log(`click ${this.state.playToggle}`);
                 this.setState(prevState => ({
                     playToggle: !prevState.playToggle
                     })
@@ -33,18 +32,18 @@ class playbutton extends Component {
             error: () => {
                 console.log("something went wrong play");
             }
-        });   
+        });
     }
-    pause(){
 
+    pause(){
         $.ajax({
             url: "https://api.spotify.com/v1/me/player/pause",
             type: "PUT",
             headers: {
-                'Authorization' : 'Bearer ' + this.props.token
+                'Authorization' : 'Bearer ' + this.state.token
             },
             success: () => {
-                console.log(`click ${this.state.playToggle}`);
+                
                 this.setState(prevState => ({
                     playToggle: !prevState.playToggle
                     })
@@ -55,19 +54,15 @@ class playbutton extends Component {
             }
         });   
     }
-    
-    
-
     render(){
 
-
         return(
-            <div>
+            <div className='play-button-container'>
             {
                 this.state.playToggle ? (
-                    <button className='play-button' onClick={this.play}>Play</button>
+                    <button className='play-button' key={this.state.playToggle} onClick={this.pause}>Pause</button>
                 ) : (
-                    <button className='pause-button' onClick={this.pause}>Pause</button>
+                    <button className='play-button' key={this.state.playToggle} onClick={this.play}>Play</button>
                 )
             }
             </div>
@@ -75,4 +70,4 @@ class playbutton extends Component {
     }
 };
 
-export default playbutton;
+export default PlayButton;

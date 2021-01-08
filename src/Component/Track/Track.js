@@ -20,14 +20,35 @@ class Track extends Component {
             artist: [],
             track_cover_art_url: null,
             preview_url: null,
+            uri: ''
         }
+        this.playTrack = this.playTrack.bind(this);
     }
+    
     componentDidMount(){
         this.getTrackData();
     }
     
-    //build url with trackID
-    //build the url first
+    playTrack() {
+        $.ajax({
+            url: 'https://api.spotify.com/v1/me/player/play',
+            type: 'PUT',
+            headers: {
+              'Authorization': 'Bearer ' + this.props.token
+            },
+            dataType: "json",
+            contentType: "application/json",
+            data: JSON.stringify({
+              "uris": [`${this.state.uri}`]
+            }),
+            success: (data) => {
+                console.log(`success: ${data}`)
+            },
+            error: (data) =>{
+                console.log(data);
+            }
+          });
+    }
 
     //AJAX call to get data from spotify API with cors
     getTrackData() {
@@ -47,8 +68,10 @@ class Track extends Component {
                     artist: data.artists,
                     track_cover_art_url: data.album.images[1].url,
                     preview_url: data.preview_url,
-                    duration_ms: data.duration_ms
+                    duration_ms: data.duration_ms,
+                    uri: data.uri
                 })
+
             }
         });
     }
@@ -69,10 +92,12 @@ class Track extends Component {
                     <img className="album-art" 
                         src={this.state.track_cover_art_url} 
                         alt="album art"
-                    />  
+                    >
+                    </img>  
                     <div className="descriptor">
                         <p className="song-title">{this.state.title}</p>
                         <p className="song-artist">{artists}</p>
+                        <button className="play-button" onClick={this.playTrack}>Play</button>
                     </div>
             </li>
 

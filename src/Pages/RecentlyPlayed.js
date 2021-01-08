@@ -46,7 +46,6 @@ class RecentlyPlayed extends Component{
                 return(                   
                     <Track token={token} trackhref={prev.track.href} key={index}></Track>
                 )
-
             })
 
         ) : (

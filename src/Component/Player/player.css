@@ -1,28 +1,47 @@
 .cover-art{
-    box-shadow: 2px 3px 2px black;
+    box-shadow: 2px 5px 5px rgb(17, 17, 17);
 }
 .empty-cover{
     background: #121212;
     margin:0 auto;
     height: 300px;
     width: 300px;
-    box-shadow: 2px 3px 2px black;
 }
 .player-interface{
 
     display: flex;
+    background-color: rgb(31, 31, 31);
     flex-direction: row;
     width: 100vw;
     padding: 80px 0px 10px 0px;
     margin: 0;
+    
 }
 
 .control-pane{
     flex-grow: 2;
     margin-right: 10px;
     background-color: rgb(49, 49, 49);
+    box-shadow: 2px 5px 2px rgb(17, 17, 17);
+}
+.details-pane{
+    margin-top: 4em;
+}
+.details-pane p{
+    color: white;
+ 
+    
+}
+.control-panel{
+    margin-top: 4em;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+}
+.control-cluster{
+    height: auto;
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
 }
 
-.control-pane p{
-    color: white;
-}

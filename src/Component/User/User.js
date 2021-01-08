@@ -59,8 +59,6 @@ class User extends Component {
             showMenu: !prevState.showMenu
             })
         );
-
-     
     }
 
     render(){
@@ -71,7 +69,6 @@ class User extends Component {
                     style={{
                         backgroundImage:`url(${this.state.profile_pic})`
                     }}>
-
                 </button>
             {
                 this.state.showMenu ? (

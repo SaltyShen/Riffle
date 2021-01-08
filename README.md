@@ -1,47 +1,36 @@
 
 # introduction
 Hello and welcome to my project!
+The purpose of this app is to quickly create playlists over Spotify quickly.
 
-The purpose of this app is to quickly create playlists over Spotify and generate collab playlists.
-
-I was inspired to create this web app at the peak of COVID when PPE wasn't available.
-My friends and I were unable to see each other, so I created this to jam out from a distance!
-For others to add songs to a queue or a playlist. I figured, why hasn't somebody stream
+I was inspired to create this with COVID and my issue with passing my phone around
+for others to add songs to a queue or a playlist. I figured, why hasn't somebody stream
 lined collabrative playlists? Spotify currently has local listening as a beta and it isn't
 quite the most robust experience yet.
 
-## Oct 12 Notes
+## New Year Notes
 
-Spotify's webplaybacksdk quick start guide is not not entirely correct in the context of 
-building a player in React. The guide tells you to create the player via:
+What a year it has been. I spent some time off on this project and decided to work on another project. The reason for doing this was mostly to keep learning about react
+as opposed to hanging onto previous projects. Previously, the React.js team said that React will always be a functional language and they would eventually start depreciating
+component based developement so to midigate the learning curve, I went off to start a new project that was built completely off functions. I feel like functional react is 
+much more powerful than component based developement. Will update this web app later on with what I have learned. Overall, I've been productive learning other langauges in
+my tech stack arsenal (i.g. Node.js, SQL, PostGresSQL, Redux) but for now I'm looking forward to finishing this current build and transitioning it to version 1.0.
 
-```
-window.onSpotifyWebPlaybackSDKReady = () => {
-  const token = '[My Spotify Web API access token]';
-  const player = new Spotify.Player({
-    name: 'Web Playback SDK Quick Start Player',
-    getOAuthToken: cb => { cb(token); }
-  });
-```
-the context of using the player instantiated in index.html needs to be declared as 
-```
-  const player = new window.Spotify.Player ({ .... });
-  //(previously declared with promises but it seems better with correct context. less code too.)
-```
+### Jan 7 Update
 
-### Oct 14th Standup
+I've been really burned out honestly from this webapp, but I've been looking back at this and have fixed functionality.
+Previously, I had the <strong>ProgBar.js</strong> update when the player called the player endpoint : https://api.spotify.com/v1/me/player/
+I've updated the player will get the endpoint on 1 second intervals and it seems to have fixed multiple problems while also maintaining functionality.
+All components now rerender upon the player itself updating and I've seemed to move past a very minor (but very annoying) road block in this web app developement.
+I've also updated some css to make the web app design more cohesive, but is still subject to change further down developement. 
 
-We did it! We have the spotify webplaybacksdk up and running!
-This doesn't come without added complexity. Now I need to create some more components.
-We now need to create a component that lists and selects a device for playback,
-but having this up and running has made this project into a actual usable web app.
+### Jan 8 Menu
 
-### Today's Menu
-
-1. Update coverart with hooks to update via next, prev, current song.
-2. Create the device_id component that will update state with device_id.
+1. Play/Pause button is not updating when the track is over. The issue is, the component does not update upon new props, but state change. Will need to be fixed, but realitively minor.
+2. Tokens from spotify last approximately 1 hour. During developement I have saved the token via local data and both may not be secure nor persistant. Will need to create a 
+   "are you still listening?" pane upon 1 hour passing. This panel will need to be a div with a higher Z-index as well as some animations for css. 
+   it will also need a function in the <strong> PlayerPane.js </strong> where it will call Spotify API for a new token. 
+   For reference, https://developer.spotify.com/documentation/ios/guides/token-swap-and-refresh/
 
 ### Known bugs
-
-1. Router seems to not play well with my pages. Will need up look over documentation on reactRouter, Links, etc. and update code accordingly.
-2. React unit testing shows components perform better with inline css. Need to update all css to inline css.
+Currently no bugs to my knowledge, but I'm sure they will come as I improve functionality. Let me know if there are any bugs!

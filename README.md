@@ -8,29 +8,22 @@ for others to add songs to a queue or a playlist. I figured, why hasn't somebody
 lined collabrative playlists? Spotify currently has local listening as a beta and it isn't
 quite the most robust experience yet.
 
-## New Year Notes
+### March 4 Update
 
-What a year it has been. I spent some time off on this project and decided to work on another project. The reason for doing this was mostly to keep learning about react
-as opposed to hanging onto previous projects. Previously, the React.js team said that React will always be a functional language and they would eventually start depreciating
-component based developement so to midigate the learning curve, I went off to start a new project that was built completely off functions. I feel like functional react is 
-much more powerful than component based developement. Will update this web app later on with what I have learned. Overall, I've been productive learning other langauges in
-my tech stack arsenal (i.g. Node.js, SQL, PostGresSQL, Redux) but for now I'm looking forward to finishing this current build and transitioning it to version 1.0.
+UI updated with ionic buttons. Assets seem to be a hard commodity to come by these days, but I'm glad I've finally found one that seems to be
+UI agnostic. (Thanks reddit/r/webdesign.) Overall the player component is very robust now. All buttons and API calls are complete. This will be the final iteration besides a few design choices as well as a few more buttons to be added (ig. repeat, like, volume.) 
 
-### Jan 7 Update
+Progression bar also needs to be updated with a scrolling feature such that you can click on it and the playback will resume at a specific position.
 
-I've been really burned out honestly from this webapp, but I've been looking back at this and have fixed functionality.
-Previously, I had the <strong>ProgBar.js</strong> update when the player called the player endpoint : https://api.spotify.com/v1/me/player/
-I've updated the player will get the endpoint on 1 second intervals and it seems to have fixed multiple problems while also maintaining functionality.
-All components now rerender upon the player itself updating and I've seemed to move past a very minor (but very annoying) road block in this web app developement.
-I've also updated some css to make the web app design more cohesive, but is still subject to change further down developement. 
+Other features that need to be updated is selecting songs and catagorial and organization components such as playlists and searching. 
 
-### Jan 8 Menu
+The API built off spring is being developed currently and should be done given I learn more about the powerful features of spring.
 
-1. Play/Pause button is not updating when the track is over. The issue is, the component does not update upon new props, but state change. Will need to be fixed, but realitively minor.
-2. Tokens from spotify last approximately 1 hour. During developement I have saved the token via local data and both may not be secure nor persistant. Will need to create a 
-   "are you still listening?" pane upon 1 hour passing. This panel will need to be a div with a higher Z-index as well as some animations for css. 
-   it will also need a function in the <strong> PlayerPane.js </strong> where it will call Spotify API for a new token. 
-   For reference, https://developer.spotify.com/documentation/ios/guides/token-swap-and-refresh/
+### March 5 Menu
+
+1. Develope the other leading player components and implement them into the player.
+2. Develope organizational components and have them also implemented into the web app.
+3. Continue the developement of the Riffle API.
 
 ### Known bugs
 Currently no bugs to my knowledge, but I'm sure they will come as I improve functionality. Let me know if there are any bugs!

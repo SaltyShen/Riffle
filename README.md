@@ -32,3 +32,7 @@ Currently no bugs to my knowledge, but I'm sure they will come as I improve func
 
 ![](https://i.imgur.com/iPUzukI.png)<br>
 Note: This song is a solid bop.
+
+### Desktop Layout: 
+
+![](https://i.imgur.com/nxIdR4R.png)

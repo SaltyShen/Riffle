@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Riffle/static/css/main.1e4fe1c4.chunk.css",
-    "main.js": "/Riffle/static/js/main.86e101e9.chunk.js",
-    "main.js.map": "/Riffle/static/js/main.86e101e9.chunk.js.map",
+    "main.js": "/Riffle/static/js/main.549e89b0.chunk.js",
+    "main.js.map": "/Riffle/static/js/main.549e89b0.chunk.js.map",
     "runtime-main.js": "/Riffle/static/js/runtime-main.b4ecb4b8.js",
     "runtime-main.js.map": "/Riffle/static/js/runtime-main.b4ecb4b8.js.map",
     "static/js/2.ecc5b9d1.chunk.js": "/Riffle/static/js/2.ecc5b9d1.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.b4ecb4b8.js",
     "static/js/2.ecc5b9d1.chunk.js",
     "static/css/main.1e4fe1c4.chunk.css",
-    "static/js/main.86e101e9.chunk.js"
+    "static/js/main.549e89b0.chunk.js"
   ]
 }

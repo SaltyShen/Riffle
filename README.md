@@ -9,8 +9,9 @@ lined collabrative playlists? Spotify currently has local listening as a beta an
 quite the most robust experience yet.
 
 ### March 4 Update
-UI updated with ionic buttons. Assets seem to be a hard commodity to come by these days, but I'm glad I've finally found one that seems to be
-UI agnostic. (Thanks reddit/r/webdesign.) Overall the player component is very robust now. All buttons and API calls are complete. This will be the final iteration besides a few design choices as well as a few more buttons to be added (ig. repeat, like, volume.) 
+Major improvement to mobile experience. CSS was updated and optimized for iPhone X and iPhone 7/8 as well as most android devices. 
+(See Below for mobile layout. Note, Spotify Web API does NOT work for iOS browsers. Will work with Google Chrome.)
+UI updated with ionic buttons. Assets seem to be a hard commodity to come by these days, but I'm glad I've finally found one that seems to be UI agnostic. (Thanks reddit/r/webdesign.) Overall the player component is very robust now. All buttons and API calls are complete. This will be the final iteration besides a few design choices as well as a few more buttons to be added (ig. repeat, like, volume.) 
 
 Progression bar also needs to be updated with a scrolling feature such that you can click on it and the playback will resume at a specific position.
 
@@ -27,6 +28,7 @@ The API built off spring is being developed currently and should be done given I
 ### Known bugs
 Currently no bugs to my knowledge, but I'm sure they will come as I improve functionality. Let me know if there are any bugs!
 
-Current player: 
+### Mobile Layout: 
 
-![](https://i.imgur.com/iPUzukI.png)
+![](https://i.imgur.com/iPUzukI.png)<br>
+Note: This song is a solid bop.
